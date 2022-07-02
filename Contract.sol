@@ -12,7 +12,7 @@ contract SevenDay is ERC721A, Ownable {
   uint256 public constant cost = 0.039 ether; 
 
 
-  constructor(string memory initBaseURI) ERC721A("7DayNFT", "7Day") {
+  constructor(string memory initBaseURI) ERC721A("BountyThug NFT", "BountyThug") {
     baseURI = initBaseURI;
   }
 
