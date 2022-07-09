@@ -9,7 +9,7 @@ contract SevenDay is ERC721A, Ownable {
   string public baseURI;
   uint256 public constant maxMintAmount = 5;
   uint256 public constant maxSupply = 8000;
-  uint256 public constant cost = 0.039 ether; 
+  uint256 public constant cost = 0.035 ether; 
 
 
   constructor(string memory initBaseURI) ERC721A("BountyThug NFT", "BountyThug") {
@@ -34,7 +34,7 @@ contract SevenDay is ERC721A, Ownable {
 
   function mint(uint256 quantity) external payable mintCompliance(quantity) {
     require(numberMinted(msg.sender) + quantity <= maxMintAmount,"Had Mint");
-    if (totalSupply()+quantity>2000){
+    if (totalSupply()+quantity>1300){
       require(msg.value >= cost * quantity, "ETH is not enough");
     }
     _safeMint(msg.sender, quantity);
